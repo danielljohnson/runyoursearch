@@ -709,6 +709,11 @@ ol, ul { padding: 0; list-style: none; }
     --section-y: 60px;
   }
 
+  /* Wordmark and the full-length button can't share a row at phone widths,
+     so drop the anchor links and shorten the button to "Intro Call". */
+  .nav-link,
+  .btn-long { display: none; }
+
   #how > .shell {
     padding-top: 64px;
     padding-bottom: 60px;
