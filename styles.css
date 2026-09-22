@@ -212,6 +212,24 @@ ol, ul { padding: 0; list-style: none; }
   color: var(--cream);
 }
 
+.btn-sm {
+  padding: 11px 18px;
+  font-size: 13px;
+  letter-spacing: .04em;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 10px 17px;
+}
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: var(--ink);
+  color: var(--cream);
+}
+
 /* --- Header -------------------------------------------------------------- */
 
 .site-header {
