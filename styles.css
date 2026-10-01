@@ -64,7 +64,19 @@ body {
   font: 400 16px/1.55 var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
+
+/* Keep the footer at the bottom of the viewport on short pages. */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+main > .hero { flex: 1; }
 
 img { display: block; max-width: 100%; }
 
@@ -335,6 +347,136 @@ ol, ul { padding: 0; list-style: none; }
   flex-wrap: wrap;
   align-items: center;
   gap: 16px;
+}
+
+/* --- Sign-up form (MailerLite embed) ---------------------------------------
+   MailerLite injects its own styles with an ID selector and !important, so
+   these overrides repeat the form's ID (#mlb2-46599753). If the form is
+   recreated in MailerLite, update that ID here. */
+
+.cta-row .ml-embedded {
+  width: 100%;
+  max-width: 520px;
+}
+
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer {
+  display: block;
+}
+
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-align-center {
+  text-align: left;
+}
+
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper {
+  display: block !important;
+  max-width: none;
+  background: transparent;
+  border-radius: 0;
+}
+
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+  padding: 0;
+}
+
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  width: auto;
+}
+
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow,
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-field-group {
+  margin: 0;
+  height: 100%;
+}
+
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+  height: 100%;
+  min-height: 52px;
+  padding: 0 16px !important;
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--hairline-card) !important;
+  border-radius: var(--radius) !important;
+  font: 500 16px/1.2 var(--font-body) !important;
+}
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder {
+  color: var(--ink-50);
+  opacity: 1;
+}
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--ink) !important;
+}
+
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit {
+  flex: 0 0 auto;
+  float: none;
+  width: auto;
+  margin: 0;
+}
+
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.primary {
+  min-height: 52px;
+  padding: 0 28px !important;
+  width: auto !important;
+  white-space: nowrap;
+  background: var(--accent) !important;
+  color: var(--cream) !important;
+  border-radius: var(--radius) !important;
+  font: 700 15px/1 var(--font-body) !important;
+  letter-spacing: .05em !important;
+  text-transform: uppercase !important;
+  transition: background .15s ease;
+}
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.primary:hover,
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.primary:focus-visible {
+  background: var(--ink) !important;
+}
+
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading {
+  min-height: 52px;
+  border-radius: var(--radius) !important;
+  background: var(--accent) !important;
+}
+
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-successBody .ml-form-successContent {
+  margin: 0;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--hairline-card);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4 {
+  margin: 0 0 4px;
+  color: var(--ink);
+  font: 400 24px/1.1 var(--font-display);
+  text-transform: uppercase !important;
+}
+.cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p {
+  margin: 0;
+  color: var(--ink-70);
+  font: 400 15px/1.5 var(--font-body);
+}
+
+@media (max-width: 480px) {
+  .cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+    flex-direction: column;
+  }
+  .cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit,
+  .cta-row .ml-embedded #mlb2-46599753.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.primary {
+    width: 100% !important;
+  }
 }
 
 .fine-print {
@@ -661,8 +803,8 @@ ol, ul { padding: 0; list-style: none; }
 /* --- Footer -------------------------------------------------------------- */
 
 .site-footer {
-  background: var(--ink);
-  color: var(--cream-70);
+  border-top: 1px solid var(--hairline);
+  color: var(--ink-60);
 }
 
 .footer-inner {
@@ -670,36 +812,23 @@ ol, ul { padding: 0; list-style: none; }
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding-top: 44px;
-  padding-bottom: 44px;
+  gap: 8px 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.footer-wordmark {
-  font-size: 16px;
-  line-height: 1;
-  letter-spacing: .06em;
-  color: var(--cream);
-}
-
-.footer-tagline { font-size: 14px; line-height: 1; }
+.footer-tagline { font-size: 13px; line-height: 1.4; }
 
 .footer-links {
   display: flex;
   flex-wrap: wrap;
   gap: 22px;
-  font: 500 14px/1 var(--font-body);
+  font: 500 13px/1.4 var(--font-body);
 }
 
-.footer-link { color: var(--cream-75); }
+.footer-link { color: var(--ink-60); }
 .footer-link:hover,
-.footer-link:focus-visible { color: var(--cream); }
+.footer-link:focus-visible { color: var(--ink); }
 
 /* --- Narrow viewports ---------------------------------------------------- */
 
@@ -729,4 +858,34 @@ ol, ul { padding: 0; list-style: none; }
   .portrait-chip { left: 0; }
 
   .section-head { margin-bottom: 28px; }
+}
+
+/* --- Centered single-column layout ---------------------------------------- */
+
+.hero-copy {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-copy .lede { margin-left: auto; margin-right: auto; }
+.hero-copy .cta-row { justify-content: center; }
+.hero-copy .ml-embedded { margin: 0 auto; }
+
+#about .shell { text-align: center; }
+#about .prose {
+  margin-left: auto;
+  margin-right: auto;
+}
+.band-ink .prose { color: var(--cream-75); }
+.band-ink .h2 { color: var(--cream); }
+
+.hero-copy .wordmark {
+  margin-bottom: 28px;
+  font-size: 13px;
+}
+
+.hero-copy .cta-row + .fine-print {
+  margin-top: 18px;
+  font-size: 16px;
+  color: var(--ink-70);
 }
