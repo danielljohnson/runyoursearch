@@ -586,18 +586,17 @@ ul { padding: 0; list-style: none; }
     --section-y: 60px;
   }
 
-  /* Wordmark, Sign in and the button have to share a row on phones, so the
-     in-page anchor links go. */
-  .nav-anchor { display: none; }
+  /* Phones get just the wordmark and Sign in; the hero's button is the CTA. */
+  .nav-anchor,
+  .site-header .btn { display: none; }
 
-  .header-inner { flex-wrap: nowrap; }
-  .site-header .wordmark { font-size: 12px; letter-spacing: .08em; }
-  .header-nav { flex-wrap: nowrap; gap: 14px; }
+  .header-inner {
+    flex-wrap: nowrap;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
   .site-header .wordmark,
-  .nav-link,
-  .site-header .btn-sm { white-space: nowrap; }
-  .nav-link { letter-spacing: .06em; }
-  .site-header .btn-sm { padding: 9px 12px; }
+  .nav-link { white-space: nowrap; }
 
 
   .section-head { margin-bottom: 28px; }
