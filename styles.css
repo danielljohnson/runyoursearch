@@ -23,7 +23,6 @@
   --hairline:        rgba(23, 22, 15, .12);
   --hairline-strong: rgba(23, 22, 15, .14);
   --hairline-card:   rgba(23, 22, 15, .16);
-  --hairline-pill:   rgba(23, 22, 15, .2);
   --hairline-cream:  rgba(255, 249, 242, .2);
 
   /* Type */
@@ -233,11 +232,6 @@ ul { padding: 0; list-style: none; }
   letter-spacing: .04em;
 }
 
-.btn-outline {
-  background: transparent;
-  color: var(--ink);
-  border-color: var(--ink);
-}
 
 /* --- Header -------------------------------------------------------------- */
 
@@ -312,8 +306,10 @@ ul { padding: 0; list-style: none; }
 
 .h1 { margin-bottom: 22px; }
 
+
+
 .lede {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   max-width: 34em;
   font-size: clamp(17px, 1.5vw, 19px);
   line-height: 1.55;
@@ -322,22 +318,10 @@ ul { padding: 0; list-style: none; }
 }
 
 .lede-strong {
-  margin-bottom: 30px;
+  margin-top: 28px;
+  margin-bottom: 36px;
   font-weight: 600;
   color: var(--ink);
-}
-
-.pill {
-  display: inline-block;
-  margin-bottom: 26px;
-  padding: 7px 14px;
-  border: 1px solid var(--hairline-pill);
-  border-radius: 999px;
-  background: rgba(255, 252, 247, .7);
-  font: 600 12px/1.2 var(--font-body);
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--ink-body);
 }
 
 .cta-row {
@@ -615,7 +599,6 @@ ul { padding: 0; list-style: none; }
   .nav-link { letter-spacing: .06em; }
   .site-header .btn-sm { padding: 9px 12px; }
 
-  .pill { font-size: 11px; letter-spacing: .04em; }
 
   .section-head { margin-bottom: 28px; }
 
