@@ -287,8 +287,8 @@ ul { padding: 0; list-style: none; }
   position: relative;
   background-image:
     linear-gradient(180deg,
-      rgba(245, 242, 236, .55) 0%,
-      rgba(245, 242, 236, .88) 62%,
+      rgba(245, 242, 236, .65) 0%,
+      rgba(245, 242, 236, .92) 62%,
       var(--paper) 100%),
     url("assets/hero-background.png");
   background-size: cover;
